@@ -1,0 +1,16 @@
+{
+  "files": [
+    {
+      "path": "/home/aturner/.ssh/id_rsa",
+      "user": "aturner",
+      "group": "aturner",
+      "chmod": "0700"
+    },
+    {
+      "path": "/home/aturner/.ssh/config",
+      "user": "aturner",
+      "group": "aturner",
+      "chmod": "0700"
+    }
+  ]
+}
