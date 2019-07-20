@@ -1,14 +1,20 @@
 {
   "files": [
     {
-      "path": "/home/aturner/.ssh/id_rsa",
-      "user": "aturner",
+      "path": "/home/aturner/.ssh/example1",
+      "owner": "aturner",
       "group": "aturner",
       "chmod": "0700"
     },
     {
-      "path": "/home/aturner/.ssh/config",
-      "user": "aturner",
+      "path": "/home/aturner/.ssh/example2",
+      "owner": "aturner",
+      "group": "aturner",
+      "chmod": "0700"
+    },
+    {
+      "path": "/home/aturner/.ssh/example3",
+      "owner": "aturner",
       "group": "aturner",
       "chmod": "0700"
     }
