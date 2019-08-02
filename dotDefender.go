@@ -35,7 +35,12 @@ func check(e error) {
 
 // download function for getting data from
 // lastpass and writing to file
-func download(chmod os.FileMode, path string) {
+func download(chmod string, path string) {
+
+     // convert chmod string to base8 for os.FileMode
+    out1, err := strconv.ParseInt(chmod, 8, 32)
+    check(err)
+    perm := os.FileMode(out1)
 
     // set command and args
     command := "lpass"
@@ -43,13 +48,31 @@ func download(chmod os.FileMode, path string) {
 
     //run command
     cmd := exec.Command(command, args...)
-    out, err := cmd.CombinedOutput()
+    out2, err := cmd.CombinedOutput()
     check(err)
 
     // write output
-    content := []byte(out)
-    err = ioutil.WriteFile(path, content, chmod)
+    content := []byte(out2)
+    err = ioutil.WriteFile(path, content, perm)
     check(err)
+
+}
+
+// upload function for sending data to
+// lastpass
+func upload(path string) {
+
+   // set command and args
+   command := "lpass"
+   args := []string{"edit", path, "--non-interactive", "--notes"}
+
+   //run command
+   cmd := exec.Command(command, args...)
+   out, err := cmd.CombinedOutput()
+   check(err)
+
+    // print output
+    fmt.Println(out)
 
 }
 
@@ -103,12 +126,15 @@ func main() {
         fmt.Println("Chmod: " + files.Files[i].Chmod)
         fmt.Println("")
 
-        // convert chmod string to base8 for os.FileMode
-        out, err := strconv.ParseInt(files.Files[i].Chmod, 8, 32)
-        check(err)
-        chmod := os.FileMode(out)
-
         // call download function
-        download(chmod, files.Files[i].Path)
+        //download(files.Files[i].Chmod, files.Files[i].Path)
+
+
+        // call upload function
+        //upload(files.Files[i].Path)
+
+        // call backup function
+        //backup(backuptype, files.Files[i].Path)
+
     }
 }
