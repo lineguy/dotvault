@@ -96,12 +96,20 @@ func chown(owner string, group string, path string) {
 
 	//run command
 	cmd := exec.Command(command, args...)
-	out, err := cmd.CombinedOutput()
+	err := cmd.Start()
 	check(err)
+}
 
-	// print output
-	fmt.Println(out)
+func chmod(chmod string, path string) {
 
+	// set command and args
+	command := "chmod"
+	args := []string{chmod, path}
+
+	//run command
+	cmd := exec.Command(command, args...)
+	err := cmd.Start()
+	check(err)
 }
 
 func main() {
@@ -134,10 +142,12 @@ func main() {
 		fmt.Println("")
 
 		// call download function
-		//download(files.Files[i].Chmod, files.Files[i].Path)
+		download(files.Files[i].Chmod, files.Files[i].Path)
+		chown(files.Files[i].Owner, files.Files[i].Group, files.Files[i].Path)
+		chmod(files.Files[i].Chmod, files.Files[i].Path)
 
 		// call upload function
-		upload(files.Files[i].Path)
+		//upload(files.Files[i].Path)
 
 		// call backup function
 		//backup(backuptype, files.Files[i].Path)
