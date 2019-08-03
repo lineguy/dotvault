@@ -87,8 +87,8 @@ func upload(path string) {
 // of a file
 func chown(owner string, group string, path string) {
 
-	// combine owner and group
-	ownergroup := fmt.Sprint(owner + ":" + group)
+    // combine owner & group
+    ownergroup := fmt.Sprint(owner + ":" + group)
 
 	// set command and args
 	command := "chown"
@@ -96,20 +96,27 @@ func chown(owner string, group string, path string) {
 
 	//run command
 	cmd := exec.Command(command, args...)
-	err := cmd.Start()
+    err := cmd.Start()
 	check(err)
+
 }
 
+// chmod function for changing permissions
+// of a file
 func chmod(chmod string, path string) {
 
-	// set command and args
-	command := "chmod"
-	args := []string{chmod, path}
-
-	//run command
-	cmd := exec.Command(command, args...)
-	err := cmd.Start()
+	// test file
+	_, err := os.Stat(path)
 	check(err)
+
+	// convert chmod string to base8 for os.FileMode
+	out1, err := strconv.ParseInt(chmod, 8, 32)
+	check(err)
+	perm := os.FileMode(out1)
+
+	err = os.Chmod(path, perm)
+	check(err)
+
 }
 
 func main() {
