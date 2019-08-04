@@ -28,9 +28,13 @@ go build main.go
 
 ### Configuration
 
-dotVaults only configuration is setup in the files.json file. The file default file includes some examples to show how to configure the files you would like to manage with dotVault.
+dotVaults main configuration is setup in the `files.json` file. The file default file includes some examples to show how to configure the files you would like to manage with dotVault. If you need to find the `lpass_id` you can see each item in your LastPass vault by using the `lpass ls` command, these items will need to exist in your LastPass before configuring `files.json`.
 
-#### Example
+#### LastPass Item Example
+
+
+
+#### files.json Example
 ```
 {
   "files": [
@@ -41,6 +45,14 @@ dotVaults only configuration is setup in the files.json file. The file default f
       "owner": "Username of the user to own file",
       "group": "Group name to associate with file",
       "chmod": "File mode bits for securing file",
+    },
+    {
+      "name": "File Name 2",
+      "lpass_id": "3495167510810510691",
+      "path": "/home/username/.ssh/id_rsa",
+      "owner": "username",
+      "group": "username",
+      "chmod": "0700",
     }
   ]
 }
