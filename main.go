@@ -38,6 +38,21 @@ func check(msg string, err error) {
     }
 }
 
+
+func dependencies() {
+
+    // set command and args
+	command := "which"
+	args := []string{"lpass"}
+
+	//run command
+	cmd := exec.Command(command, args...)
+	err := cmd.Start()
+    check("Error: Can't find lpass command, please make sure lastpass-cli is installed.", err)
+
+
+}
+
 // download function for getting data from
 // lastpass and writing to file
 func download(chmod string, id string, path string) {
@@ -128,6 +143,9 @@ func chmod(chmod string, path string) {
 }
 
 func main() {
+
+    // check dependencies
+    dependencies()
 
     is_download := flag.Bool("download", false, "a bool")
     is_upload := flag.Bool("upload", false, "a bool")
