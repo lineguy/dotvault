@@ -28,6 +28,8 @@ go build main.go
 
 ### Ussage
 
+#### files.json
+
 ### Why would I want my sensitive configuration files in LastPass?
 
 Your sensitiver configuration files might be the most important files on your machine. dotVault enables you to back them up and store them in a secure manner, its also a very convienent way of being able to download them onto new devices as and when you need to.
