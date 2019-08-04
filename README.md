@@ -44,7 +44,7 @@ dotVaults main configuration is setup in the `files.json` file. The file default
       "path": "Local path to store the file",
       "owner": "Username of the user to own file",
       "group": "Group name to associate with file",
-      "chmod": "File mode bits for securing file",
+      "chmod": "File mode bits for securing file"
     },
     {
       "name": "File Name 2",
@@ -52,7 +52,7 @@ dotVaults main configuration is setup in the `files.json` file. The file default
       "path": "/home/username/.ssh/id_rsa",
       "owner": "username",
       "group": "username",
-      "chmod": "0700",
+      "chmod": "0700"
     }
   ]
 }
