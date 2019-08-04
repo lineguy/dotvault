@@ -14,7 +14,7 @@ __Disclaimer:__ _this has only been tested on Ubuntu Linux._
 
 dotVault is just a go wrapper script so it depends on lastpass-cli and go so install it using the below command:
 ```
-sudo apt install lastpass-cli go
+sudo apt install lastpass-cli golang
 ```
 
 ### Installation
