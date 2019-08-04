@@ -1,6 +1,6 @@
 # dotVault
 
-dotVault is an a wrapper script that I wrote in go. Its purpose is to enable anyone to easily store & retrieve sensitive configuration files from their LastPass vault (https://www.lastpass.com/)
+dotVault is an a wrapper script that I wrote in go (1st Go Project). Its purpose is to enable anyone to easily store & retrieve sensitive configuration files from their LastPass vault (https://www.lastpass.com/)
 
 ## Getting Started
 
@@ -26,9 +26,25 @@ go run main.go
 go build main.go
 ```
 
-### Ussage
+### Configuration
 
-#### files.json
+dotVaults only configuration is setup in the files.json file. The file default file includes some examples to show how to configure the files you would like to manage with dotVault.
+
+#### Example
+```
+{
+  "files": [
+    {
+      "name": "Give this part of the config a name",
+      "lpass_id": "LastPass id of the stored file",
+      "path": "Local path to store the file",
+      "owner": "Username of the user to own file",
+      "group": "Group name to associate with file",
+      "chmod": "File mode bits for securing file",
+    }
+  ]
+}
+```
 
 ### Why would I want my sensitive configuration files in LastPass?
 
