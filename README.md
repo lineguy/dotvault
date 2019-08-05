@@ -19,11 +19,9 @@ sudo apt install lastpass-cli golang
 
 ### Installation
 
+Once you have all the dependencies you can build the binary using the below command:
 ```
-go run main.go
-```
-```
-go build main.go
+go build dot-vault.go
 ```
 
 ### Configuration
@@ -32,7 +30,7 @@ dotVaults main configuration is setup in the `files.json` file. The file default
 
 #### LastPass Item Example
 
-
+![alt text](https://i.imgur.com/0tg7ilJ.png)
 
 #### files.json Example
 ```
