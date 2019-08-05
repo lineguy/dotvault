@@ -1,6 +1,6 @@
 # dotVault
 
-dotVault is an a wrapper script that I wrote in go (1st Go Project). Its purpose is to enable anyone to easily store & retrieve sensitive configuration files from their LastPass vault (https://www.lastpass.com/)
+dotVault is a wrapper script that I wrote in go (1st Go Project). Its purpose is to enable anyone to easily store & retrieve sensitive configuration files from their LastPass vault (https://www.lastpass.com/)
 
 ## Getting Started
 
@@ -19,14 +19,14 @@ sudo apt install lastpass-cli golang
 
 ### Installation
 
-Once you have all the dependencies you can build the binary using the below command:
+Once you have all the dependencies, you can build the binary using the below command:
 ```
 go build dot-vault.go
 ```
 
 ### Configuration
 
-dotVaults main configuration is setup in the `files.json` file. The file default file includes some examples to show how to configure the files you would like to manage with dotVault. If you need to find the `lpass_id` you can see each item in your LastPass vault by using the `lpass ls` command, these items will need to exist in your LastPass before configuring `files.json`.
+dotVaults main configuration is set up in the `files.json` file. The file default file includes some examples to show how to configure the files you would like to manage with dotVault. If you need to find the `lpass_id` you can see each item in your LastPass vault by using the `lpass ls` command, these items will need to exist in your LastPass before configuring `files.json`.
 
 #### LastPass Item Example
 
@@ -56,6 +56,6 @@ dotVaults main configuration is setup in the `files.json` file. The file default
 }
 ```
 
-### Why would I want my sensitive configuration files in LastPass?
+### Why would I want to keep my sensitive configuration files in LastPass?
 
-Your sensitiver configuration files might be the most important files on your machine. dotVault enables you to back them up and store them in a secure manner, its also a very convienent way of being able to download them onto new devices as and when you need to.
+Your sensitive configuration files might be the most important files on your machine. dotVault enables you to back them up and securely store them. It is also a convenient way of being able to download them onto other devices anytime you need them.
