@@ -3,25 +3,25 @@
     {
       "name": "example1",
       "lpass_id": "5055092637923627328",
-      "path": "/home/aturner/.ssh/example1",
-      "owner": "aturner",
-      "group": "aturner",
+      "path": "/home/username/.ssh/example1",
+      "owner": "username",
+      "group": "username",
       "chmod": "0700"
     },
     {
       "name": "example2",
       "lpass_id": "6212810868555357798",
-      "path": "/home/aturner/.ssh/example2",
-      "owner": "aturner",
-      "group": "aturner",
+      "path": "/home/username/.ssh/example2",
+      "owner": "username",
+      "group": "username",
       "chmod": "0700"
     },
     {
       "name": "example3",
       "lpass_id": "7210375197767041879",
-      "path": "/home/aturner/.ssh/example3",
-      "owner": "aturner",
-      "group": "aturner",
+      "path": "/home/username/.ssh/example3",
+      "owner": "username",
+      "group": "username",
       "chmod": "0700"
     }
   ]
