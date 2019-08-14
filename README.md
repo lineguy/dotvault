@@ -60,14 +60,14 @@ dotVaults main configuration is set up in the `files.json` file. The file defaul
 
 There are currently only two ways to use `dot-vault`.
 
-Passing the `--download` flag will attempt to download the files in `files.json` and overwrite any files that already exist in the specified file path on the local system.
+Passing the `-download` flag will attempt to download the files in `files.json` and overwrite any files that already exist in the specified file path on the local system.
 ```
-dot-vault --download
+dot-vault -download
 ```
 
-Passing the `--upload` flag will attempt to upload the files in `files.json` and overwrite any files already in the specified lpass id.
+Passing the `-upload` flag will attempt to upload the files in `files.json` and overwrite any files already in the specified lpass id.
 ```
-dot-vault --upload
+dot-vault -upload
 ```
 
 ### Why would I want to keep my sensitive configuration files in LastPass?
