@@ -26,48 +26,42 @@ go build dot-vault.go
 
 ### Configuration
 
-dotVaults main configuration is set up in the `files.json` file. The file default file includes some examples to show how to configure the files you would like to manage with dotVault. If you need to find the `lpass_id` you can see each item in your LastPass vault by using the `lpass ls` command, these items will need to exist in your LastPass before configuring `files.json`.
+dotVaults main configuration is set up in the `files.yaml` file. The file default file includes some examples to show how to configure the files you would like to manage with dot-vault. If you need to find the `lpass_id` you can see each item in your LastPass vault by using the `lpass ls` command, these items will need to exist in your LastPass before configuring `files.yaml`.
 
 #### LastPass Item Example
 
 ![alt text](https://i.imgur.com/0tg7ilJ.png)
 
-#### files.json Example
+#### files.yaml Example
 ```
-{
-  "files": [
-    {
-      "name": "Give this part of the config a name",
-      "lpass_id": "LastPass id of the stored file",
-      "path": "Local path to store the file",
-      "owner": "Username of the user to own file",
-      "group": "Group name to associate with file",
-      "chmod": "File mode bits for securing file"
-    },
-    {
-      "name": "File Name 2",
-      "lpass_id": "3495167510810510691",
-      "path": "/home/username/.ssh/id_rsa",
-      "owner": "username",
-      "group": "username",
-      "chmod": "0700"
-    }
-  ]
-}
+---
+    files:
+    - name: example1
+      lpass_id: '5055092637923627328'
+      path: "/home/username/.ssh/example1"
+      owner: username
+      group: username
+      chmod: '0700'
+    - name: example2
+      lpass_id: '6212810868555357798'
+      path: "/home/username/.ssh/example2"
+      owner: username
+      group: username
+      chmod: '0700'
 ```
 
 ### Usage
 
 There are currently only two ways to use `dot-vault`.
 
-Passing the `-download` flag will attempt to download the files in `files.json` and overwrite any files that already exist in the specified file path on the local system.
+Passing the `-download` flag will attempt to download the files in `files.yaml` and overwrite any files that already exist in the specified file path on the local system.
 ```
-dot-vault -download
+dot-vault --download
 ```
 
-Passing the `-upload` flag will attempt to upload the files in `files.json` and overwrite any files already in the specified lpass id.
+Passing the `-upload` flag will attempt to upload the files in `files.yaml` and overwrite any files already in the specified lpass id.
 ```
-dot-vault -upload
+dot-vault --upload
 ```
 
 ### Why would I want to keep my sensitive configuration files in LastPass?
